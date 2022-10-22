@@ -15,7 +15,7 @@ npm install
 npm start
 ```
 
-### Run the JSON server (http://localhost:5000)
+### Run the JSON server (http://localhost:5050)
 
 ```
 npm run server

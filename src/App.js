@@ -80,16 +80,15 @@ const App = () => {
   return (
     <Router>
       <div className="container">
+        <Header
+          onAdd={() => setShowAddTask(!showAddTask)}
+          showAdd={showAddTask}
+        />
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <Header
-                  onAdd={() => setShowAddTask(!showAddTask)}
-                  showAdd={showAddTask}
-                  showButton={true}
-                />
                 {showAddTask && <AddTask onAdd={addTask} />}
                 {tasks.length > 0 ? (
                   <Tasks
@@ -100,7 +99,6 @@ const App = () => {
                 ) : (
                   "No Tasks To Show"
                 )}
-                <Footer showLink={true} />
               </>
             }
           />
@@ -108,17 +106,12 @@ const App = () => {
             path="/about"
             element={
               <>
-                <Header
-                  onAdd={() => setShowAddTask(!showAddTask)}
-                  showAdd={showAddTask}
-                  showButton={false}
-                />
                 <About />
-                <Footer showLink={false} />
               </>
             }
           />
         </Routes>
+        <Footer />
       </div>
     </Router>
   )
